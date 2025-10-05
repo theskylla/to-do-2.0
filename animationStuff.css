@@ -3,17 +3,16 @@ html, body{
    background-repeat: no-repeat;
    margin: 0;
    height: 100%;
-
-
+   font-family: sans-serif;
 }
 
 h1 {
     margin: 0;
     padding-top: 10px;
+    font-family: serif;
 }
 
 p {
-    font-family: sans-serif;
     font-size: 12px;
     padding-bottom: 10px;
     
@@ -29,18 +28,22 @@ p {
 }
 
 
-
 #box li {
     width: 90%;
     list-style: none;
     text-align: center;
-
-    
    
 }
 
 .error-message {
     color: red;
+    text-align: center;
+    font-size: 10px;
 
 }
 
+.close {
+    padding-left: 10px;
+    font-size: 10px;
+    opacity: 50%;
+}

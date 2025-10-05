@@ -19,14 +19,18 @@ function addTask() {
   if (!taskText) {
     let existingError = document.querySelector(".error-message");
     if (!existingError){ 
-    const messageBox = document.querySelector("ul"); 
+        
+    const messageBox = document.querySelector("#errorBox"); 
+
     const errorMessage = document.createElement("span"); 
 
     errorMessage.className = "error-message";
+
     messageBox.appendChild(errorMessage); 
     
-    errorMessage.innerText = " *Please enter a task"; 
+    errorMessage.innerText = "Input must not be empty"; 
     }
+
     //Remove error message when user types into input
     const input = document.querySelector("#input");
     input.addEventListener("input", function() {
