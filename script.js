@@ -11,9 +11,6 @@ function addTask() {
   let task = taskText.charAt(0).toUpperCase() + taskText.slice(1).toLowerCase();
   // clear input
   input.value = ""; 
-  // limited input to 30 characters in html #QA-skills
-
-  
 
   // Create a single error message if empty input    
   if (!taskText) {
@@ -21,13 +18,9 @@ function addTask() {
     if (!existingError){ 
         
     const messageBox = document.querySelector("#errorBox"); 
-
     const errorMessage = document.createElement("span"); 
-
     errorMessage.className = "error-message";
-
     messageBox.appendChild(errorMessage); 
-    
     errorMessage.innerText = "Input must not be empty"; 
     }
 
@@ -48,7 +41,6 @@ function addTask() {
   // Checkbox with google material icons
   const checkbox = document.createElement("span");
   
-
   //task text
   const textLabel = document.createElement("span");
   textLabel.className = "text-label";
@@ -62,7 +54,7 @@ function addTask() {
 
 
   // Put everything together
-  li.appendChild(checkbox);
+
   li.appendChild(textLabel);
   li.appendChild(trash);
 
@@ -99,9 +91,9 @@ function toggleBox(el) {
   const textLabel = li.querySelector(".text-label");
   const taskText = textLabel.textContent;
 
-  if (el.textContent.trim() === "check_box_outline_blank") {
+  if (el.textContent.trim() === "li") {
     // Mark as completed
-    el.textContent = "check_box";
+    
     textLabel.style.textDecoration = "line-through";
 
     // Remove from uncompleted if somewhere already
