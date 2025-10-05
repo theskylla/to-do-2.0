@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animationStuff.css">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>To do:</h1>
+    <div id="box">
+    <h1>My ToDo:</h1>
     <p id="showCompletedTasks">0 completed</p>
   <!--Input field and button -->  
     <input type="text" maxlength="30" id="input" placeholder="ex. Buy eggs"/>
-  <button onclick="addTask()">Add Task</button>
+  <button onclick="addTask()">OK</button>
 
 
 <!-- List to display tasks -->
@@ -25,6 +26,7 @@
     
 
   </ul>
+</div>
 
 </body>
 </html>

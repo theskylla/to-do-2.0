@@ -24,7 +24,7 @@ function addTask() {
 
     errorMessage.className = "error-message";
     messageBox.appendChild(errorMessage); 
-    errorMessage.style.color = "red"; 
+    
     errorMessage.innerText = " *Please enter a task"; 
     }
     //Remove error message when user types into input
@@ -43,8 +43,7 @@ function addTask() {
 
   // Checkbox with google material icons
   const checkbox = document.createElement("span");
-  checkbox.className = "material-symbols-outlined checkbox";
-  checkbox.textContent = "check_box_outline_blank";
+  
 
   //task text
   const textLabel = document.createElement("span");
