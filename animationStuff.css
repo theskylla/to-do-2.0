@@ -24,7 +24,7 @@ p {
     width: 300px;
     background-color: white;
     padding: 10px 0px 10px 0px;
-    box-shadow: 2px 2px 20px gray;
+    box-shadow: 1px 1px 10px gray;
     
     animation: slide 1s 1;
     animation-timing-function: ease-out;
