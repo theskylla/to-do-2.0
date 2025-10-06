@@ -24,7 +24,8 @@ p {
     width: 300px;
     background-color: white;
     padding: 10px 0px 10px 0px;
-
+    box-shadow: 2px 2px 20px gray;
+    
     animation: slide 1s 1;
     animation-timing-function: ease-out;
     
@@ -56,26 +57,41 @@ p {
 
 /* animation for adding item */
 li {
-    animation: fade 0.5s 1;
+    animation: fade 0.25s 1;
     animation-timing-function: ease-in-out;
 
 }
 
 @keyframes fade {
    0% {
-   transform: translateY(+30px)
+   transform: translateY(+30px);
+   opacity: 0;
    }
 
    100% { 
     transform: translateY(0px);
+    opacity: 1;
    }
 }
 
-/* checked list item */
+/* checked list item + animation */
 .text-label.completed {
     color: grey;
     text-decoration: line-through;
+    animation: complete 1s 1;
 }
+ @keyframes complete {
+    0% {
+    color: black;
+    }
+
+    100% {
+    color:grey;
+    }
+
+    
+ }
+
 
 
 /* error message + blinking animation */
