@@ -70,7 +70,7 @@ function addTask() {
 
 // Event delegation for checkboxes and close buttons
 document.getElementById("taskList").addEventListener("click", function(e) {
-  if (e.target.classList.contains("checkbox")) {
+  if (e.target.classList.contains("text-label")) {
     toggleBox(e.target);
   }
 
@@ -85,40 +85,29 @@ document.getElementById("taskList").addEventListener("click", function(e) {
   
 });
 
-// Toggle checkbox - gjord enklare så allt håller sig i rätt arrays
 function toggleBox(el) {
   const li = el.parentElement;
-  const textLabel = li.querySelector(".text-label");
-  const taskText = textLabel.textContent;
+  const taskText = el.textContent;
 
-  if (el.textContent.trim() === "li") {
-    // Mark as completed
-    
-    textLabel.style.textDecoration = "line-through";
-
-    // Remove from uncompleted if somewhere already
-    tasks = tasks.filter(t => t !== taskText);
-
-    // Add to completed if not already there
-    if (!completedTasks.includes(taskText)) {
-      completedTasks.push(taskText);
-    }
-
-    console.log("Marked as completed:", taskText);
-  } else {
+  // Check if task is already completed
+  if (el.classList.contains("completed")) {
     // Mark as uncompleted
-    el.textContent = "check_box_outline_blank";
-    textLabel.style.textDecoration = "none";
+    el.classList.remove("completed");
+    el.style.textDecoration = "none";
 
-    // Remove from completed if it exists
     completedTasks = completedTasks.filter(t => t !== taskText);
-
-    // Add back to uncompleted if not already there
-    if (!tasks.includes(taskText)) {
-      tasks.push(taskText);
-    }
+    if (!tasks.includes(taskText)) tasks.push(taskText);
 
     console.log("Marked as uncompleted:", taskText);
+  } else {
+    // Mark as completed
+    el.classList.add("completed");
+    el.style.textDecoration = "line-through";
+
+    tasks = tasks.filter(t => t !== taskText);
+    if (!completedTasks.includes(taskText)) completedTasks.push(taskText);
+
+    console.log("Marked as completed:", taskText);
   }
 
   // Update completed tasks counter
@@ -128,6 +117,7 @@ function toggleBox(el) {
   console.log("Uncompleted tasks:", tasks);
   console.log("Completed tasks:", completedTasks);
 }
+
 
 
 function removeTask(taskText) {

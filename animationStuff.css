@@ -24,6 +24,24 @@ p {
     width: 300px;
     background-color: white;
     padding: 10px 0px 10px 0px;
+
+    animation: slide 1s 1;
+    animation-timing-function: ease-out;
+    
+}
+
+@keyframes slide {
+    0%{
+    transform: translateY(-300px);
+    }
+
+    50% {
+     transform: translateY(50px);
+    }
+
+    100% {
+    transform: translateY(0px);
+    }
     
 }
 
@@ -36,11 +54,50 @@ p {
    
 }
 
+/* animation for adding item */
+li {
+    animation: fade 0.5s 1;
+    animation-timing-function: ease-in-out;
+
+}
+
+@keyframes fade {
+   0% {
+   transform: translateY(+30px)
+   }
+
+   100% { 
+    transform: translateY(0px);
+   }
+}
+
+/* checked list item */
+.text-label.completed {
+    color: grey;
+    text-decoration: line-through;
+}
+
+
+/* error message + blinking animation */
 .error-message {
     color: red;
     text-align: center;
     font-size: 10px;
+    animation: blink 0.5s 2;
+    animation-direction: alternate;    
+    animation-timing-function: ease-in;
+}
 
+
+@keyframes blink {
+ 0%, 100% {
+    opacity: 1;
+ }
+
+
+ 50%{
+    opacity: 0;
+    }
 }
 
 .close {
